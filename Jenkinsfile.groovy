@@ -5,7 +5,7 @@ node {
                                 PROD: 18.191.19.171''', name: 'Remote_instances', trim: true)])])
     git 'https://github.com/csamatov96/jenkins_pipeline.git'
     stage("Install Apache"){
-        sh "ssh     ec@user@${Remote_instances}     sudo yum install httpd -y"
+        sh "ssh  ec2-user@${Remote_instances}     sudo yum install httpd -y"
 
     }
 }
