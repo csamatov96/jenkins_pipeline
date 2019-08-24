@@ -9,7 +9,7 @@ node {
         sh "ssh  ec2-user@${Remote_instances}     sudo yum install httpd -y"
     
     stage("Create Index.html"){
-        sh "touch index.html ec2-user@${Remote_instances}:/tmp"
+        sh "echo 'Hi' > index.html ec2-user@${Remote_instances}:/tmp"
     }
     stage("Move files"){
         sh "ssh ec2-user@${Remote_instances}    sudo mv /tmp/index.html     var/www/html/html"
