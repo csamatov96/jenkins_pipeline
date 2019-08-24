@@ -1,5 +1,5 @@
 node {
     stage("Say Hello")
     properties([pipelineTriggers([cron('* * * * *')])])
-    sh "echo Hello"
+    sh "echo Hello ${NAME}"
 }
